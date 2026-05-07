@@ -1,0 +1,51 @@
+<circuit version="1.1.0-SR1" rev="2005" stepSize="1000000" stepsPS="1000000" NLsteps="100000" reaStep="1000000" animate="0" >
+
+<item itemtype="SR04" CircId="SR04-7" mainComp="false" Show_id="false" Show_Val="false" Pos="-684,-400" rotation="0" hflip="1" vflip="1" label="SR04-7" idLabPos="-16,-48" labelrot="0" valLabPos="-16,20" valLabRot="0" />
+
+<item itemtype="Servo" CircId="Servo-13" mainComp="false" Show_id="true" Show_Val="false" Pos="-348,-260" rotation="0" hflip="1" vflip="1" label="Servo-13" idLabPos="-16,-40" labelrot="0" valLabPos="-16,20" valLabRot="0" Speed="0.2 _s/60º" MinPulse="1000 _µs" MaxPulse="2000 _µs" Input_High_V="2.5 V" Input_Low_V="2.5 V" Input_Imped="1000 MΩ" />
+
+<item itemtype="AudioOut" CircId="AudioOut-14" mainComp="false" Show_id="false" Show_Val="false" Pos="-964,76" rotation="-180" hflip="1" vflip="1" label="AudioOut-14" idLabPos="-20,-36" labelrot="0" valLabPos="-16,20" valLabRot="0" Buzzer="false" Impedance="8 Ω" Frequency="1 kHz" />
+
+<item itemtype="Hd44780" CircId="Hd44780-16" mainComp="false" Show_id="true" Show_Val="false" Pos="-1012,-312" rotation="0" hflip="1" vflip="1" label="Hd44780-16" idLabPos="70,-82" labelrot="0" valLabPos="-16,20" valLabRot="0" Rows="2" Cols="16" />
+
+<item itemtype="Voltage Source" CircId="Voltage Source-20" mainComp="false" ShowProp="MaxValue" Show_id="false" Show_Val="true" Pos="-980,-440" rotation="0" hflip="1" vflip="1" label="Voltage Source-20" idLabPos="-32,-48" labelrot="0" valLabPos="-8,30" valLabRot="0" Running="true" Value_Volt="4.58 V" MaxValue="5 V" MinValue="0 V" />
+
+<item itemtype="Subcircuit" CircId="Mega-26" mainComp="false" Show_id="true" Show_Val="false" Pos="-744,-240" rotation="0" hflip="1" vflip="1" label="Mega-26" idLabPos="0,-20" labelrot="0" valLabPos="-16,20" valLabRot="0" Logic_Symbol="false">
+<mainCompProps MainCompId="mega2560-63" Frequency="16 MHz" Program="firmware.hex" Auto_Load="false" saveEepr="true" MainMcu="true" SerialMon="-1" />
+</item>
+
+<item itemtype="Node" CircId="Node-30" mainComp="false" Pos="-932,0" />
+
+<item itemtype="Connector" uid="Connector-51" startpinid="SR04-7-trigpin" endpinid="Mega-26-2" pointList="-684,-352,-684,-292,-768,-292,-768,-104,-736,-104" />
+
+<item itemtype="Connector" uid="Connector-52" startpinid="SR04-7-outpin" endpinid="Mega-26-3" pointList="-676,-352,-676,-280,-780,-280,-780,-96,-736,-96" />
+
+<item itemtype="Connector" uid="Connector-53" startpinid="Servo-13-in2" endpinid="Mega-26-9" pointList="-396,-244,-812,-244,-812,-40,-736,-40" />
+
+<item itemtype="Connector" uid="Connector-54" startpinid="Mega-26-GND1" endpinid="Servo-13-in1" pointList="-592,-48,-468,-48,-468,-260,-396,-260" />
+
+<item itemtype="Connector" uid="Connector-55" startpinid="Servo-13-in0" endpinid="Mega-26-5V00" pointList="-396,-276,-516,-276,-516,-32,-592,-32" />
+
+<item itemtype="Connector" uid="Connector-58" startpinid="AudioOut-14-lPin" endpinid="Mega-26-10" pointList="-948,84,-736,84,-736,-32" />
+
+<item itemtype="Connector" uid="Connector-67" startpinid="Mega-26-GND0" endpinid="Node-30-1" pointList="-736,0,-932,0" />
+
+<item itemtype="Connector" uid="Connector-68" startpinid="Hd44780-16-PinRW" endpinid="Node-30-0" pointList="-988,-304,-988,0,-932,0" />
+
+<item itemtype="Connector" uid="Connector-69" startpinid="Node-30-2" endpinid="AudioOut-14-rPin" pointList="-932,0,-932,76,-948,76" />
+
+<item itemtype="Connector" uid="Connector-70" startpinid="Hd44780-16-PinRS" endpinid="Mega-26-12" pointList="-996,-304,-996,-16,-736,-16" />
+
+<item itemtype="Connector" uid="Connector-71" startpinid="Hd44780-16-PinEn" endpinid="Mega-26-11" pointList="-980,-304,-980,-24,-736,-24" />
+
+<item itemtype="Connector" uid="Connector-72" startpinid="Hd44780-16-dataPin4" endpinid="Mega-26-7" pointList="-940,-304,-940,-64,-736,-64" />
+
+<item itemtype="Connector" uid="Connector-73" startpinid="Hd44780-16-dataPin5" endpinid="Mega-26-6" pointList="-932,-304,-932,-72,-736,-72" />
+
+<item itemtype="Connector" uid="Connector-74" startpinid="Hd44780-16-dataPin6" endpinid="Mega-26-5" pointList="-924,-304,-924,-80,-736,-80" />
+
+<item itemtype="Connector" uid="Connector-75" startpinid="Hd44780-16-dataPin7" endpinid="Mega-26-4" pointList="-916,-304,-916,-88,-736,-88" />
+
+<item itemtype="Connector" uid="Connector-80" startpinid="Voltage Source-20-outPin" endpinid="SR04-7-inpin" pointList="-952,-424,-772,-424" />
+
+</circuit>
